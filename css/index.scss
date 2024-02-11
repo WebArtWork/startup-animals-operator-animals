@@ -1,0 +1,20 @@
+// Global styles
+
+@import "scss/utils/normalize";
+@import "scss/utils/fonts";
+@import "scss/utils/vars";
+// @import "scss/media";
+@import "scss/base";
+// pages
+@import "scss/pages/index";
+@import "scss/pages/template";
+@import "scss/pages/articles";
+@import "scss/pages/article";
+@import "scss/pages/products";
+@import "scss/pages/product";
+@import "scss/pages/home";
+@import "scss/pages/services";
+@import "scss/pages/service";
+@import "scss/pages/profiles";
+@import "scss/pages/stores";
+@import "scss/pages/store";

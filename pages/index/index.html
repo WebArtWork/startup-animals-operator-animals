@@ -1,0 +1,230 @@
+<section class="home-page">
+	<div class="home-container container ">
+		<h3 class="home-text">
+			<p>{{{translate("Template.Welcome to our universal portal for pets and their owners!")}}} </p>
+			<p>{{{translate("Template.Here you can find everything you need for your furry friends and explore establishments offering a variety of services.")}}} </p>
+			<p>{{{translate("Template.Our mission is to provide the best care for your animals and ensure they lead happy and healthy lives.Happy shopping!")}}}</p>
+		</h3>
+		<div class="ellipse1"></div>
+		<div class="ellipse2"></div>
+		<div class="ellipse3"></div>
+		<div class="ellipse4"></div>
+		<div class="ellipse5"></div>
+		<div class="home-img">
+			<img src="/template/img/catt-h.png" alt="головна сторінка">
+		</div>
+	</div>
+</section>
+
+<div class="products ">
+	<p class="prod-titlle-text">{{{translate("Template.PRODUCTS")}}}</p>
+	<div class="line"></div>
+	<div class="container">
+		<div class="products-items ">
+			<a href="/product/{{{product.url || product.id}}}" class="products-item prod-animation">
+				<img src="/template/img/cat.svg">
+				<p class="prod-text">{{{translate("Template.For cats")}}}</p>
+			</a>
+			<a href="/product/{{{product.url || product.id}}}" class="products-item prod-animation">
+				<img src="/template/img/dog.svg">
+				<p class="prod-text">{{{translate("Template.For dogs")}}}</p>
+			</a>
+			<a href="/product/{{{product.url || product.id}}}" class="products-item prod-animation">
+				<img src="/template/img/fish.svg">
+				<p class="prod-text">{{{translate("Template.For fish")}}}</p>
+			</a>
+			<a href="/product/{{{product.url || product.id}}}" class="products-item prod-animation">
+				<img src="/template/img/rodent.svg">
+				<p class="prod-text">{{{translate("Template.For rodent")}}}</p>
+			</a>
+			<a href="/product/{{{product.url || product.id}}}" class="products-item prod-animation">
+				<img src="/template/img/reptiles.svg">
+				<p class="prod-text">{{{translate("Template.For reptiles")}}}</p>
+			</a>
+			<a href="/product/{{{product.url || product.id}}}" class="products-item prod-animation">
+				<img src="/template/img/birds.svg">
+				<p class="prod-text">{{{translate("Template.For birds")}}}</p>
+			</a>
+			<a href="/product/{{{product.url || product.id}}}" class="products-item prod-animation">
+				<img src="/template/img/horses.svg">
+				<p class="prod-text">{{{translate("Template.For horses")}}}</p>
+			</a>
+			<a href="/product/{{{product.url || product.id}}}" class="products-item prod-animation">
+				<img src="/template/img/others.svg">
+				<p class="prod-text">{{{translate("Template.For others")}}}</p>
+			</a>
+		</div>
+	</div>
+</div>
+<!-- <section class="products ">
+	<p class="prod-titlle-text">Products</p>
+	<div class="container">
+		<div class="products-items ">
+			{% for product in products %}
+			<a href="/product/{{{product.id}}}" class="products-item prod-animation">
+				<img src="{{{product.thumb}}}" alt="{{{product.name}}}">
+				<p class="prod-text">{{{product.name}}}</p>
+			</a>
+			<p>{{{product.short}}}</p>
+
+			{% endfor %}
+		</div>
+	</div>
+</section> -->
+
+<section class="services ">
+
+	<div class="container servic-container">
+		<div class="serv-container">
+			<p class="serv-text"> {{{translate("Template.OUR SERVICES")}}}</p>
+		</div>
+		<div class="services-items">
+			{% for service in topServices %}
+			<a href="/service/{{{service.url || service.id}}}" class="services-item ">
+				<img src="{{{service.thumb}}}" alt="{{{service.name}}}" class="services-animation">
+				<h1>{{{service.name}}}</h1>
+				<p>{{{service.short}}}</p>
+			</a>
+			{% endfor %}
+		</div>
+	</div>
+</section>
+
+<section class="stores">
+	<p class="title-stores">{{{translate("Template.Stores")}}}</p>
+	<div class="container">
+		<p class="title-stores-p">
+			Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do.
+		</p>
+		<div class="stores-items">
+			{% for store in stores %}
+			<a href="/store/{{{store.url || store.id}}}" class="stores-item">
+				<img src="{{{store.thumb}}}" alt="{{{store.name}}}">
+				<h1 class="stores-home-name">{{{store.name}}}</h1>
+			</a>
+			{% endfor %}
+		</div>
+		<a href="/stores">
+			<button>View more</button>
+		</a>
+</section>
+
+<section class="profiles">
+	<h1 class="title">{{{translate("Template.Profiles")}}}</h1>
+	<p class="title-stores-p">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do.</p>
+	<div class="container">
+		<div class="row">
+			<div class="slider-profiles">
+				{% for profile in profiles %}
+				<div class="slide-profiles">
+					<div class="card p-0">
+						<div class="card-image">
+							<a href="/profile/{{{profile.id}}}" class="profiles-item">
+								<img src="{{{profile.thumb}}}" alt="{{{profile.name}}}">
+							</a>
+						</div>
+						<div class="card-content d-flex flex-column align-items-center">
+							<h4 class="pt-2">{{{profile.name}}}</h4>
+							<h5>{{{translate("Template.Creative Designer")}}}</h5>
+
+							<ul class="social-icons d-flex justify-content-center">
+								<li style="--i:1">
+									<a href="#">
+										<span class="fab fa-facebook"></span>
+									</a>
+								</li>
+								<li style="--i:2">
+									<a href="#">
+										<span class="fab fa-twitter"></span>
+									</a>
+								</li>
+								<li style="--i:3">
+									<a href="#">
+										<span class="fab fa-instagram"></span>
+									</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				{% endfor %}
+			</div>
+			<div class="slider-navigation">
+				<div class="slider-dots"></div>
+			</div>
+		</div>
+	</div>
+</section>
+
+
+
+<section class="articles ">
+	<h1 class="title">{{{translate("Template.Articles")}}}</h1>
+	<div class="container">
+		<div class="articles-items">
+			{% for article in topArticles %}
+			<a href="/article/{{{article.url || article.id}}}" class="articles-item ">
+				<img src="{{{article.thumb}}}" alt="{{{articles.name}}}" class="articles-animation">
+				<h1>{{{article.name}}}</h1>
+				<p>{{{article.short}}}</p>
+			</a>
+			{% endfor %}
+		</div>
+		<a href="/articles">
+			<button class="more">{{{translate("Template.View more")}}}</button>
+		</a>
+	</div>
+</section>
+
+<!-- {% if store.data.telegram %}
+<a href="{{{store.data.telegram}}}"><svg viewBox="0 0 448 512" xmlns="http://www.w3.org/2000/svg">
+		<path
+			d="M446.7 98.6l-67.6 318.8c-5.1 22.5-18.4 28.1-37.3 17.5l-103-75.9-49.7 47.8c-5.5 5.5-10.1 10.1-20.7 10.1l7.4-104.9 190.9-172.5c8.3-7.4-1.8-11.5-12.9-4.1L117.8 284 16.2 252.2c-22.1-6.9-22.5-22.1 4.6-32.7L418.2 66.4c18.4-6.9 34.5 4.1 28.5 32.2z" />
+	</svg></a>
+{% endif %}
+
+{% if store.data.phone %}
+<a href="{{{store.data.phone}}}"><svg style="
+											enable-background: new 0 0 100 100;
+										" version="1.1" viewBox="0 0 100 100" xml:space="preserve" xmlns="http://www.w3.org/2000/svg"
+		xmlns:xlink="http://www.w3.org/1999/xlink">
+		<g id="Layer_1" />
+		<g id="Layer_2">
+			<g>
+				<g>
+					<path class="st103"
+						d="M53.594,7.743c23.205,3.568,33.907,14.603,36.862,37.975c0.274,2.159-0.53,5.407,2.55,5.467     c3.219,0.062,2.443-3.139,2.47-5.3C95.749,23.872,76.556,3.466,54.265,2.713c-1.682,0.242-5.162-1.16-5.379,2.61     C48.742,7.864,51.672,7.447,53.594,7.743z" />
+					<path class="st103"
+						d="M89.405,71.095c-7.788-5.494-17.581-16.008-25.212-4.297c-2.547,3.856-6.112,4.024-9.84,2.333     c-10.277-4.66-18.212-11.839-22.861-22.285c-5.482-12.975,7.939-10.538,7.69-19.584C38.915,22.338,26.958,5.88,22.236,4.143     c-1.954-0.719-3.9-0.672-5.888-0.004C5.276,7.862,0.69,16.968,5.082,27.75C18.185,59.918,41.243,82.312,72.985,95.98     c1.81,0.778,3.82,1.089,4.838,1.369c7.227,0.073,15.692-6.89,18.137-13.8C98.314,76.901,93.34,74.263,89.405,71.095z" />
+					<path class="st103"
+						d="M58.154,14.133c-2.232-0.269-5.179-1.321-5.7,1.777c-0.545,3.251,2.739,2.921,4.85,3.393     c14.332,3.203,19.322,8.42,21.682,22.636c0.345,2.073-0.34,5.299,3.182,4.764c2.61-0.398,1.668-3.163,1.886-4.778     C84.17,28.276,72.474,15.853,58.154,14.133z" />
+					<path class="st103"
+						d="M59.511,25.239c-1.49,0.037-2.952,0.198-3.5,1.79c-0.822,2.38,0.908,2.947,2.669,3.23     c5.879,0.944,8.973,4.411,9.561,10.274c0.159,1.591,1.169,2.881,2.706,2.699c2.13-0.254,2.323-2.15,2.257-3.951     C73.309,32.694,65.864,25.081,59.511,25.239z" />
+				</g>
+			</g>
+		</g>
+	</svg></a>
+{% endif %}
+
+{% if store.data.facebook %}
+<a href="{{{store.data.facebook}}}"><svg height="100%" style="
+											fill-rule: evenodd;
+											clip-rule: evenodd;
+											stroke-linejoin: round;
+											stroke-miterlimit: 2;
+										" version="1.1" viewBox="0 0 512 512" width="100%" xml:space="preserve" xmlns="http://www.w3.org/2000/svg"
+		xmlns:serif="http://www.serif.com/" xmlns:xlink="http://www.w3.org/1999/xlink">
+		<path
+			d="M374.244,285.825l14.105,-91.961l-88.233,0l0,-59.677c0,-25.159 12.325,-49.682 51.845,-49.682l40.116,0l0,-78.291c0,0 -36.407,-6.214 -71.213,-6.214c-72.67,0 -120.165,44.042 -120.165,123.775l0,70.089l-80.777,0l0,91.961l80.777,0l0,222.31c16.197,2.541 32.798,3.865 49.709,3.865c16.911,0 33.511,-1.324 49.708,-3.865l0,-222.31l74.128,0Z"
+			style="fill-rule: nonzero" />
+	</svg></a>
+{% endif %}
+
+{% if store.data.instagram %}
+<a href="{{{store.data.instagram}}}"><svg viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg">
+		<rect fill="none" height="256" width="256" />
+		<circle cx="128" cy="128" r="32" />
+		<path
+			d="M172,28H84A56,56,0,0,0,28,84v88a56,56,0,0,0,56,56h88a56,56,0,0,0,56-56V84A56,56,0,0,0,172,28ZM128,176a48,48,0,1,1,48-48A48,48,0,0,1,128,176Zm52-88a12,12,0,1,1,12-12A12,12,0,0,1,180,88Z" />
+	</svg></a>
+{% endif %} -->

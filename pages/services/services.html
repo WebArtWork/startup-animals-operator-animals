@@ -1,0 +1,90 @@
+<!-- <div class="container">
+	<h1 class="title">Service</h1>
+	<div class="news-items">
+		{% for service in services %}
+		<a href="/service/{{{service.id}}}">
+			<h1>{{{service.name}}}</h1>
+			<img src="{{{service.thumb}}}" alt="{{{service.name}}}">
+			<p>{{{service.short}}}</p>
+		</a>
+		{% endfor %}
+	</div>
+</div>  -->
+
+<script type="module">
+	import Service from '/api/wjst/service';
+	import Dom from '/api/wjst/dom';
+	Service.perPage = 10;
+	let page = 1;
+
+	if ((await Service.page(1)).length < Service.perPage) {
+		Dom.remove('loadServices');
+	}
+
+	document.getElementById('loadServices').addEventListener('click', async () => {
+		page++;
+		const services = await Service.page(page);
+
+		if (services.length < Service.perPage) {
+			Dom.remove('loadServices');
+		}
+		for (const service of services) {
+			if (!service.thumbs) {
+				service.thumbs = [];
+			}
+			Dom.add('services', Dom.template('service', {
+				thumb: service.thumb,
+				thumbs: service.thumbs.map(thumb => {
+					return Dom.template('service_thumb', {
+						name: service.name,
+						thumb
+					})
+				}),
+				name: service.name,
+				_id: service._id,
+				short: service.short,
+				description: service.description
+			}));
+		}
+	});
+</script>
+
+<h1 class="section-heading">{{{translate("Template.Our Services")}}}</h1>
+<section class="services-page">
+	<div class="container">
+		<div class="row" id="services">
+			{% for service in services %}
+			<div class="column">
+				<div class="services-card">
+					<div class="icon-wrapper">
+						<a href="/service/{{{service.url || service.id}}}">
+							<img src="{{{service.thumb}}}" alt="{{{service.name}}}">
+						</a>
+					</div>
+					<a href="/service/{{{service.url || service.id}}}">
+						<h3>{{{service.name}}}</h3>
+						<p>{{{service.short}}}</p>
+					</a>
+				</div>
+			</div>
+			{% endfor %}
+		</div>
+	</div>
+	<button class="load-more" id="loadServices" style="background-color: rgb(17, 93, 216); padding: 10px; border-radius: 10px; color:white; font-weight: 600; margin: 0 auto; display: block; border-color: rgb(17, 93, 216);">Load more</button>
+</section>
+
+<div id="template-service" style="display: none;"> 
+	<div class="column">
+		<div class="services-card">
+			<div class="icon-wrapper">
+				<a href="/service/{_id}">
+					<img src="{thumb}" alt="{name}">
+				</a>
+			</div>
+			<a href="/service/{.id}">
+				<h3>{name}</h3>
+				<p>{short}</p>
+			</a>
+		</div>
+	</div>
+</div>

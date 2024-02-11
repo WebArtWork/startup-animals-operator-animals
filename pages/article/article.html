@@ -1,0 +1,20 @@
+<div class="main-container">
+  <div class="image-container">
+    <img src="{{{article.thumb}}}" alt="{{{article.name}}}">
+  </div>
+  <div class="article-content-container">
+    <h1>{{{article.name}}}</h1>
+    <p>{{{article.short}}}</p>
+    <pre>{{{article.description|safe}}}</pre>
+    <!-- {% if article.reference %}
+    <a href="{{{article.reference}}}">{{{article.reference}}}</a>
+    {% endif %} -->
+  </div>
+  <div class="article-content-list">
+      <a href="/article/{{{article.id}}}" class="article-content-image">
+        <img src="{{{article.thumb}}}" alt="{{{articles.name}}}">
+        <h1>{{{article.name}}}</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do</p>
+      </a>
+  </div>
+</div>

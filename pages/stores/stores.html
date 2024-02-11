@@ -1,0 +1,17 @@
+<h1 class="stores-titlle">{{{translate("Template.Our Stores")}}}</h1>
+
+<div class="stores-page">
+	<div class="container">
+		<div class="stores-items-content">
+			{% for store in stores %}
+			<a href="/store/{{{store.url || store.id}}}" class="stores-item-content">
+				<img src="{{{store.thumb}}}" alt="{{{store.name}}}">
+
+				<h1 class="stores-text">{{{store.name}}}</h1>
+				<!-- <p>{{{store.short}}}</p> -->
+
+			</a>
+			{% endfor %}
+		</div>
+	</div>
+</div>

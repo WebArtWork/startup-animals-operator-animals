@@ -1,0 +1,16 @@
+<div class="store-image-container ">
+	<img src="{{{store.thumb}}}" alt="{{{store.name}}}">
+</div>
+<div class="store-page">
+	<div class="store-content-container">
+		<h2>{{{store.name}}}</h2>
+		<p>{{{store.short}}}</p>
+	</div>
+	<div class="store-content-list">
+		{% for thumb in store.thumbs %}
+		<div class="store-content-image">
+			<img src="{{{thumb}}}">
+		</div>
+		{% endfor %}
+	</div>
+</div>

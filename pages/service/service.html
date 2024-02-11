@@ -1,0 +1,24 @@
+<div class="service-container">
+	<div class="service-head-img">
+		<img src="{{{service.thumb}}}" alt="{{{service.name}}}">
+	</div>
+	<div class="sevice-text">
+		<h1>{{{service.name}}}</h1>
+		<p>{{{service.description|safe}}}</p>
+	</div>
+
+	<div class="service-dod-image">
+		<div class=" slider-profiles">
+			{% for thumb in service.thumbs %}
+			<div class=" slide-profiles">
+				<div class="service-image">
+					<img src="{{{thumb}}}" alt="{{{service.name}}}">
+				</div>
+			</div>
+			{% endfor %}
+		</div>
+	</div>
+	<div class="slider-navigation">
+		<div class="slider-dots"></div>
+	</div>
+</div>

@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>{{{title}}}</title>
+	<meta itemprop="name" content="{{{title}}}">
+	<meta name="twitter:title" content="{{{title}}}">
+	<meta property="og:title" content="{{{title}}}" />
+
+	<meta name="description" content="{{{description}}}">
+	<meta itemprop="description" content="{{{description}}}">
+	<meta name="twitter:description" content="{{{description}}}">
+	<meta property="og:description" content="{{{description}}}" />
+
+	<meta itemprop="image" content="{{{image}}}">
+	<meta name="twitter:image:src" content="{{{image}}}">
+	<meta property="og:image" content="{{{image}}}" />
+
+	<meta name="keywords" content="{{{keywords}}}">
+	<base href="/">
+	<!-- шрифт -->
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+
+	<link rel="icon" type="image/x-icon" href="/template/img/favicon.png">
+	<link rel="stylesheet" href="/template/css/index.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+	<style>
+		/* CSS*/
+	</style>
+	<!-- Google tag (gtag.js) -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-43B6MYJV76"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag() { dataLayer.push(arguments); }
+		gtag('js', new Date());
+
+		gtag('config', 'G-43B6MYJV76');
+	</script>
+		<style>
+			:root {
+				--primary_color: {{{variables.primary_color || "white"}}};
+			}
+
+			.welcome__form-btn{
+				color: var(--primary_color);
+			}
+
+			</style>
+	</head>
+</head>
+
+<body>
+	{% if !hideLayout %}
+	<header class="topbar">
+
+		<div class="topbar__container">
+
+			<div class="topbar__logo">
+				<a href="#" class="logo-container">
+					<img src="/template/img/logo.svg" alt="Логотип">
+				</a>
+			</div>
+			<div class="menu">
+				<nav>
+					<ul>
+						<a href="/products">{{{translate("Template.PRODUCTS")}}}</a>
+						<a href="/articles">{{{translate("Template.ARTICLES")}}}</a>
+						<a href="/services">{{{translate("Template.SERVICES")}}}</a>
+						<a href="/stores">{{{translate("Template.STORES")}}}</a>
+					</ul>
+				</nav>
+			</div>
+			<div class="topbar-login">
+				<a target="_blank" href="https://animals.webart.work/manage/profile" class="topbar-login">
+					<p>{{{translate("Template.Auth")}}}</p>
+					<!-- <img src="/template/img/profile.svg" alt="вхід"> -->
+				</a>
+			</div>
+		</div>
+		<div class="menu-btn">
+			<span></span>
+			<span></span>
+			<span></span>
+		</div>
+
+	</header>
+	{% endif %}
+
+
+	<main class="main-section">
+		<section class="main-section__content">
+			<!-- HTML -->
+		</section>
+	</main>
+	</div>
+	{% if !hideLayout %}
+	<footer class="footer">
+		<div class="footer_container">
+			<div class="row">
+				<div class="footer-col">
+					<h4>services</h4>
+					<ul>
+						<li><a href="/service/{{{service.id}}}">{{{translate("Template.Pet walking")}}}</a></li>
+						<li><a href="/service/{{{service.id}}}">{{{translate("Template.Grooming")}}}</a></li>
+						<li><a href="/service/{{{service.id}}}">{{{translate("Template.Pet hotel")}}}</a></li>
+						<li><a href="/service/{{{service.id}}}">{{{translate("Template.Veterinary clinic")}}}</a></li>
+						<li><a href="/service/{{{service.id}}}">{{{translate("Template.Canine science")}}}</a></li>
+					</ul>
+				</div>
+				<div class="footer-col">
+					<h4>{{{translate("Template.Products")}}}</h4>
+					<ul>
+						<li><a href="#">{{{translate("Template.For cats")}}}</a></li>
+						<li><a href="#">{{{translate("Template.For dogs")}}}</a></li>
+						<li><a href="#">{{{translate("Template.For fish")}}}</a></li>
+						<li><a href="#">{{{translate("Template.For rodent")}}}</a></li>
+						<li><a href="#">{{{translate("Template.For reptiles")}}}</a></li>
+						<li><a href="#">{{{translate("Template.For birds")}}}</a></li>
+					</ul>
+				</div>
+				<div class="footer-col">
+					<h4>{{{translate("Template.additionally")}}}</h4>
+					<ul>
+						<li><a href="#">{{{translate("Template.FAQ")}}}</a></li>
+						<li><a href="#">{{{translate("Template.blog")}}}</a></li>
+						<li><a href="#">{{{translate("Template.about us")}}}</a></li>
+						<li><a href="#">{{{translate("Template.contract-offer")}}}</a></li>
+						<li><a href="/profiles">{{{translate("Template.profiles")}}}</a></li>
+					</ul>
+				</div>
+				<div class="footer-col">
+					<h4>{{{translate("Template.follow us")}}}</h4>
+					<div class="social-links">
+						<a target="_blank" href="https://www.facebook.com/profile.php?id=100095076506673"><i
+								class="fab fa-facebook-f"></i></a>
+						<a target="_blank" href="https://twitter.com/Animals_waw"><i class="fab fa-twitter"></i></a>
+						<a target="_blank" href="https://instagram.com/animals.wa?igshid=OGQ5ZDc2ODk2ZA=="><i
+								class="fab fa-instagram"></i></a>
+						<a target="_blank" href="https://t.me/animals_waw"><i class="fab fa-telegram"></i></a>
+						<a target="_blank" href="https://www.linkedin.com/company/animalsw/"><i
+								class="fab fa-linkedin"></i></a>
+					</div>
+
+					<div class="footer-text">
+						{{{translate("Template.Provide your beloved pet with the best goods and services! A wideselection of quality products for domestic animals and professional veterinary care services.Fast delivery and support. Your animals deserve the best!")}}}
+					</div>
+				</div>
+			</div>
+		</div>
+			<button class="en" onclick="selectLanguage('en')">
+				EN
+			</button>
+			<button class="ua" onclick="selectLanguage('ua')">
+				UA
+			</button>
+	</footer>
+	{% endif %}
+
+	<script>
+		function selectLanguage(lang) {
+			fetch("/api/user/lang/" + lang, {
+				method: "GET",
+				headers: {
+					"Content-Type": "application/json",
+				},
+			})
+				.then((response) => response.json())
+				.then((data) => {
+					window.scrollTo(0, 0);
+
+					location.reload();
+				})
+				.catch((error) => {
+					console.error("Error:", error);
+				});
+		}
+	</script>
+	<script src="https://kit.fontawesome.com/e6ea7df366.js" crossorigin="anonymous"></script>
+	<script src="/template/js/index.js"></script>
+	<script><!-- JS --></script>
+</body>
+
+</html>

@@ -1,0 +1,9 @@
+{
+	"name": "profile",
+	"profiles": {
+		"id": "profile",
+		"thumb": "https://neryxomka.com/template/img/welcome.png",
+		"name": "portfolio",
+		"description": "HTML"
+	}
+}

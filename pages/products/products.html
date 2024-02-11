@@ -1,0 +1,74 @@
+<script type="module">
+	import Product from '/api/wjst/product';
+	import Dom from '/api/wjst/dom';
+	Product.perPage = 10;
+	let page = 1;
+
+	if ((await Product.page(1)).length < Product.perPage) {
+		Dom.remove('loadProducts');
+	}
+
+	document.getElementById('loadProducts').addEventListener('click', async () => {
+		page++;
+		const products = await Product.page(page);
+
+		if (products.length < Product.perPage) {
+			Dom.remove('loadProducts');
+		}
+		for (const product of products) {
+			if (!product.thumbs) {
+				product.thumbs = [];
+			}
+			Dom.add('products', Dom.template('product', {
+				thumb: product.thumb,
+				thumbs: product.thumbs.map(thumb => {
+					return Dom.template('product_thumb', {
+						name: product.name,
+						thumb
+					})
+				}),
+				name: product.name,
+				_id: product._id,
+				short: product.short,
+				description: product.description
+			}));
+		}
+	});
+</script>
+
+<h1 class="products-titlle">{{{translate("Template.Products")}}}</h1>
+
+<section class="products-page">
+	<div class="product-container">
+		<div class="product_content" id="products">
+			{% for product in products %}
+			<div class="product_content_item">
+				<a href="/product/{{{product.url || product.id}}}">
+					<img src="{{{product.thumb}}}" alt="{{{product.name}}}">
+				</a>
+				<h1>{{{product.name}}}</h1>
+				<p>{{{product.short}}}</p>
+				<p class="products-price">{{{translate("Template.price")}}} - {{{product.price}}}</p>
+				<!-- <a href="/product/{{{product.url || product.id}}}">
+					<p class="view-more">{{{translate("Template.View more")}}}</p>
+				</a> -->
+			</div>
+			{% endfor %}
+		</div>
+	</div>
+	<button class="load-more" id="loadProducts" style="background-color: rgb(17, 93, 216); padding: 10px; border-radius: 10px; color:white; font-weight: 600; margin: 0 auto; display: block; border-color: rgb(17, 93, 216);">Load more</button>
+</section>
+
+<div id="template-product" style="display: none;"> 
+	<div class="product_content_item">
+		<a href="/product/{_id}">
+			<img src="{thumb}" alt="{name}">
+		</a>
+		<h1>{.name}</h1>
+		<p>{short}</p>
+		<p class="products-price">{{{translate("Template.price")}}} - {{{product.price}}}</p>
+		<!-- <a href="/product/{{{product.url || product.id}}}">
+			<p class="view-more">{{{translate("Template.View more")}}}</p>
+		</a> -->
+	</div>
+</div>

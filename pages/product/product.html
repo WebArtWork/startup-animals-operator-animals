@@ -1,0 +1,54 @@
+<div class="product-page">
+  <div class="container">
+    <div class="product__body">
+      <div class="half">
+        
+        <div class="slider-profiles">
+          {% for thumb in product.thumbs %}
+          <div class="slide-profiles">
+
+            <div class="image">
+              <!-- <img src="{{{product.thumb}}}" alt="{{{product.name}}}"> -->
+              <img src="{{{thumb}}}">
+            </div>
+
+          </div>
+          {% endfor %}
+        </div>
+        <div class="slider-navigation">
+          <div class="slider-dots"></div>
+        </div>
+      </div>
+   
+      <div class="half2">
+        <div class="featured_text">
+          <h1>{{{product.name}}}</h1>
+          <p class="sub">{{{product.name}}}</p>
+        </div>
+        <p class="price">{{{product.price}}}</p>
+        <div class="description">
+          <p>{{{product.description}}}</p>
+        </div>
+        <span class="stock"><i class="fa fa-pen"></i> {{{translate("Template.In stock")}}}</span>
+        <div class="reviews">
+          <ul class="stars">
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star-o"></i>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="product__footer">
+      <div class="recommend">
+        <p>{{{translate("Template.Recommended by")}}}</p>
+        <h3>{{{translate("Template.Taras")}}}</h3>
+      </div>
+      <div class="action">
+        <button type="button">{{{translate("Template.Add to cart")}}}</button>
+      </div>
+    </div>
+  </div>
+</div>

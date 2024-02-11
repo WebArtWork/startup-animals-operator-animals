@@ -1,0 +1,34 @@
+<!-- {% for profile in profiles %}
+<a href="/profile/{{{profile.id}}}">
+	<h1>{{{profile.name}}}</h1>
+	<img src="{{{profile.thumb}}}" alt="{{{profile.name}}}">
+</a>
+{% endfor %} -->
+
+<div class="profiles-container ">
+
+    <div class="container">
+        <div class="profiles-items-content">
+            {% for profile in profiles %}
+
+            <div class="profiles-item-content">
+                 <a href="/profile/{{{profile.id}}}">
+                    <img src="{{{profile.thumb}}}" alt="{{{profile.name}}}">
+                    <div class="profiles-text">
+                        <h1>{{{profile.name}}}</h1>
+                        <!-- <p>{{{store.short}}}</p> -->
+                    </div>
+                </a>
+                <ul class="social-list">
+                    <li><a href=""><i class="fa fa-facebook"></i></a></li>
+                    <li><a href=""><i class="fa fa-dribbble"></i></a></li>
+                    <li><a href=""><i class="fa fa-instagram"></i></a></li>
+                    <li><a href=""><i class="fa fa-linkedin"></i></a></li>
+                    <li><a href=""><i class="fa fa-google"></i></a></li>
+                </ul>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+
+</div>

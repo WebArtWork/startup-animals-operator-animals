@@ -1,0 +1,63 @@
+<script type="module">
+	import Article from '/api/wjst/article';
+	import Dom from '/api/wjst/dom';
+	Article.perPage = 10;
+	let page = 1;
+
+	if ((await Article.page(1)).length < Article.perPage) {
+		Dom.remove('loadArticles');
+	}
+
+	document.getElementById('loadArticles').addEventListener('click', async () => {
+		page++;
+		const articles = await Article.page(page);
+
+		if (articles.length < Article.perPage) {
+			Dom.remove('loadArticles');
+		}
+		for (const article of articles) {
+			if (!article.thumbs) {
+				article.thumbs = [];
+			}
+			Dom.add('articles', Dom.template('article', {
+				thumb: article.thumb,
+				thumbs: article.thumbs.map(thumb => {
+					return Dom.template('article_thumb', {
+						name: article.name,
+						thumb
+					})
+				}),
+				name: article.name,
+				_id: article._id,
+				short: article.short,
+				description: article.description
+			}));
+		}
+	});
+</script>
+
+
+<h1 class="articles-titlle">News</h1>
+
+<div class="articles-page">
+	<div class="container">
+		<div class="news-items" id="articles">
+			{% for article in articles %}
+			<a href="/article/{{{article.url || article.id}}}" class="news-item">
+				<img src="{{{article.thumb}}}" alt="{{{articles.name}}}">
+				<h1>{{{article.name}}}</h1>
+				<p>{{{article.short}}}</p>
+			</a>
+			{% endfor %}
+		</div>
+	</div>
+	<button class="load-more" id="loadArticles" style="background-color: rgb(17, 93, 216); padding: 20px; border-radius: 10px; color:white; font-weight: 600; margin: 0 auto; display: block; border-color: rgb(17, 93, 216);">Load more</button>
+</div>
+
+<div id="template-articlee" style="display: none;"> 
+	<a href="/article/{_id}" class="news-item">
+		<img src="{thumb}" alt="{name}">
+		<h1>{name}</h1>
+		<p>{short}</p>
+	</a>
+</div>

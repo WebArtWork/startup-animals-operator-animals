@@ -1,0 +1,34 @@
+{
+	"name": "articles",
+	"articles": [
+		{
+			"id": "",
+			"short": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do.",
+			"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do.",
+			"thumb": "/template/img/news1.jpg",
+			"name": "Article Name"
+		},
+		{
+			"id": "",
+			"short": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do.",
+			"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do.",
+			"thumb": "/template/img/news1.jpg",
+			"name": "Article Name"
+		},
+		{
+			"id": "",
+			"short": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do.",
+			"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do.",
+			"thumb": "/template/img/news1.jpg",
+			"name": "Article Name"
+		}
+		,
+		{
+			"id": "",
+			"short": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do.",
+			"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do.",
+			"thumb": "/template/img/news1.jpg",
+			"name": "Article Name"
+		}
+	]
+}

@@ -1,0 +1,24 @@
+{
+	"name": "store",
+	"store": {
+		"id": "/store",
+		"short": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do.",
+        "thumb": "/template/img/news1.jpg",
+		"thumbs": ["https://neryxomka.com/template/img/welcome.png","https://neryxomka.com/template/img/welcome.png","https://neryxomka.com/template/img/welcome.png"],
+		"name": "Store Name"
+	},
+	"groups": [
+		{
+			"categories": [
+				{
+					"name": "Category Name",
+					"tags": [
+						{
+							"name": "Tag Name"
+						}
+					]
+				}
+			]
+		}
+	]
+}

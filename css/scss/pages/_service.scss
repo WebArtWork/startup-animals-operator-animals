@@ -1,0 +1,56 @@
+.service-head-img {
+    max-height: 500px;
+    width: 100%;
+    margin-top: 70px;
+    
+
+    img {
+        width: 100%;
+        height: 500px;
+        object-fit: cover;
+    }
+}
+
+.sevice-text {
+    padding-top: 25px;
+    padding-left: 15%;
+}
+
+.sevice-text h1 {
+    font-size: 25px;
+    color: black;
+
+    @media (max-width:575px) {
+        font-size: 20px;
+    }
+}
+
+.sevice-text p {
+    font-size: 15px;
+    color: black;
+
+    @media (max-width:575px) {
+        font-size: 12px;
+    }
+}
+
+.service-dod-image {
+    max-width: 1300px;
+    padding: 50px 100px 0;
+    margin: 0 auto;
+
+    img {
+        max-height: 500px;
+        width: auto;
+        object-fit: cover;
+        padding: 0 15%;
+    }
+
+    @media (max-width:575px) {
+        padding: 15px 10px 0;
+
+        img {
+            padding: 0;
+        }
+    }
+}

@@ -1,0 +1,82 @@
+.stores-titlle {
+    background-color: #587DFF;
+    text-shadow: 0px 4px 5px rgba(0, 0, 0, 0.25);
+    text-align: center;
+    color: #f1f1f1;
+    letter-spacing: 0.1em;
+    font-size: 70px;
+    font-weight: bold;
+    border-top: 5px solid #ffffff;
+    border-bottom: 5px solid #ffffff;
+    margin-top: 70px;
+
+    @media (max-width: 575px) {
+        font-size: 35px;
+    }
+}
+
+.stores-page {
+    min-height: 300px;
+    background-color: #d0e0ff;
+}
+
+.stores-items-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 80px 0;
+
+
+    @media (max-width: 575px) {
+        flex-direction: column;
+    }
+}
+
+.stores-item-content {
+    @media (max-width: 575px) {
+        width: 100%;
+    }
+
+    @media (max-width: 975px) {
+        flex: 0 0 calc(50% - 10px);
+    }
+
+    flex: 0 0 calc(25% - 20px);
+    text-align: center;
+    position: relative;
+    display: inline-block;
+    // border: 2px solid #587dff;
+    border-radius: 10px;
+}
+
+.stores-item-content img {
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.stores-text {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(76, 76, 76, 0.7);
+    /* полупрозорий фон */
+    color: white;
+    opacity: 0;
+    /* Замінюємо 'display' на 'opacity' і встановлюємо початкове значення на 0 */
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 40% 20px;
+    border-radius: 10px;
+    transition: opacity 0.5s ease;
+    /* Додаємо анімацію для 'opacity' */
+}
+
+.stores-item-content:hover .stores-text {
+    opacity: 1;
+    /* При наведенні змінюємо 'opacity' на 1 для відображення тексту */
+}

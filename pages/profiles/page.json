@@ -1,0 +1,25 @@
+{
+	"name": "profiles",
+	"profiles": [
+		{
+			"id": "portfolio",
+			"thumb": "https://neryxomka.com/template/img/welcome.png",
+			"name": "portfolio"
+		},
+		{
+			"id": "portfolio",
+			"thumb": "https://neryxomka.com/template/img/welcome.png",
+			"name": "portfolio"
+		},
+		{
+			"id": "portfolio",
+			"thumb": "https://neryxomka.com/template/img/welcome.png",
+			"name": "portfolio"
+		},
+		{
+			"id": "portfolio",
+			"thumb": "https://neryxomka.com/template/img/welcome.png",
+			"name": "portfolio"
+		}
+	]
+}
